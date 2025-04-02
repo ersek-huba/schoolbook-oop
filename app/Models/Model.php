@@ -60,6 +60,7 @@ abstract class Model implements ModelInterface
         {
             return null;
         }
+        $this->id = $id;
         return $this->mapToModel($queryResult[0]);
     }
     function all($orderBy = []): array
