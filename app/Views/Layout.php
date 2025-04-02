@@ -30,8 +30,8 @@ class Layout
         echo <<<HTML
         <nav class="navbar">
             <ul class="nav-list">
-                <li class="nav-button"><a href="/"><button style="button" title="Kezdőlap">Kezdőlap</a></li>
-                <li class="nav-button"><a href="/subjects"><button style="button" title="Tantárgyak">Tantárgyak</a></li>
+                <li class="nav-button"><a href="/"><button style="button" title="Kezdőlap">Kezdőlap</button></a></li>
+                <li class="nav-button"><a href="/subjects"><button style="button" title="Tantárgyak">Tantárgyak</button></a></li>
             </ul>
         </nav>
         HTML;

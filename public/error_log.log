@@ -28,3 +28,16 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in D:\Érsek Huba 11.I\schoolbook-oop\public\index.php on line 10
+[02-Apr-2025 15:25:28 Europe/Berlin] SQLSTATE[HY000] [2002] Nem hozható létre kapcsolat, mert a célszámítógép már visszautasította a kapcsolatot
+[02-Apr-2025 15:25:28 Europe/Berlin] PHP Fatal error:  Uncaught RuntimeException: Database connection error. in D:\Érsek Huba 11.I\schoolbook-oop\app\Database\Database.php:36
+Stack trace:
+#0 D:\Érsek Huba 11.I\schoolbook-oop\app\Database\Database.php(44): App\Database\Database->__construct(Array)
+#1 D:\Érsek Huba 11.I\schoolbook-oop\app\Models\Model.php(15): App\Database\Database::getInstance()
+#2 D:\Érsek Huba 11.I\schoolbook-oop\app\Models\Subject.php(11): App\Models\Model->__construct()
+#3 D:\Érsek Huba 11.I\schoolbook-oop\app\Controllers\SubjectController.php(10): App\Models\Subject->__construct()
+#4 D:\Érsek Huba 11.I\schoolbook-oop\app\Routing\Router.php(49): App\Controllers\SubjectController->__construct()
+#5 D:\Érsek Huba 11.I\schoolbook-oop\app\Routing\Router.php(26): App\Routing\Router->handleGetRequests('/subjects')
+#6 D:\Érsek Huba 11.I\schoolbook-oop\app\Routing\Router.php(19): App\Routing\Router->dispatch('GET', '/subjects')
+#7 D:\Érsek Huba 11.I\schoolbook-oop\public\index.php(11): App\Routing\Router->handle()
+#8 {main}
+  thrown in D:\Érsek Huba 11.I\schoolbook-oop\app\Database\Database.php on line 36
