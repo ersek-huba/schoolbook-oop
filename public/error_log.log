@@ -41,3 +41,41 @@ Stack trace:
 #7 D:\Érsek Huba 11.I\schoolbook-oop\public\index.php(11): App\Routing\Router->handle()
 #8 {main}
   thrown in D:\Érsek Huba 11.I\schoolbook-oop\app\Database\Database.php on line 36
+[09-Apr-2025 13:34:10 Europe/Berlin] SQLSTATE[HY000] [2002] Nem hozható létre kapcsolat, mert a célszámítógép már visszautasította a kapcsolatot
+[09-Apr-2025 13:34:10 Europe/Berlin] PHP Fatal error:  Uncaught RuntimeException: Database connection error. in D:\Érsek Huba 11.I\schoolbook-oop\app\Database\Database.php:36
+Stack trace:
+#0 D:\Érsek Huba 11.I\schoolbook-oop\app\Database\Database.php(44): App\Database\Database->__construct(Array)
+#1 D:\Érsek Huba 11.I\schoolbook-oop\app\Models\Model.php(15): App\Database\Database::getInstance()
+#2 D:\Érsek Huba 11.I\schoolbook-oop\app\Models\Subject.php(11): App\Models\Model->__construct()
+#3 D:\Érsek Huba 11.I\schoolbook-oop\app\Controllers\SubjectController.php(10): App\Models\Subject->__construct()
+#4 D:\Érsek Huba 11.I\schoolbook-oop\app\Routing\Router.php(49): App\Controllers\SubjectController->__construct()
+#5 D:\Érsek Huba 11.I\schoolbook-oop\app\Routing\Router.php(26): App\Routing\Router->handleGetRequests('/subjects')
+#6 D:\Érsek Huba 11.I\schoolbook-oop\app\Routing\Router.php(19): App\Routing\Router->dispatch('GET', '/subjects')
+#7 D:\Érsek Huba 11.I\schoolbook-oop\public\index.php(11): App\Routing\Router->handle()
+#8 {main}
+  thrown in D:\Érsek Huba 11.I\schoolbook-oop\app\Database\Database.php on line 36
+[09-Apr-2025 14:09:39 Europe/Berlin] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'name' in 'order clause'
+[09-Apr-2025 14:09:42 Europe/Berlin] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'name' in 'order clause'
+[09-Apr-2025 14:38:11 Europe/Berlin] View file not found: D:\Érsek Huba 11.I\schoolbook-oop\app\Views\subjects/create.php
+[09-Apr-2025 14:48:56 Europe/Berlin] PHP Warning:  Undefined array key "btn-save" in D:\Érsek Huba 11.I\schoolbook-oop\app\Views\subjects\create.php on line 16
+[09-Apr-2025 14:59:27 Europe/Berlin] View file not found: D:\Érsek Huba 11.I\schoolbook-oop\app\Views\subjects/edit.php
+[09-Apr-2025 15:16:52 Europe/Berlin] SQLSTATE[42000]: Syntax error or access violation: 1103 Incorrect table name ''
+[09-Apr-2025 15:16:58 Europe/Berlin] SQLSTATE[42000]: Syntax error or access violation: 1103 Incorrect table name ''
+[09-Apr-2025 15:16:59 Europe/Berlin] SQLSTATE[42000]: Syntax error or access violation: 1103 Incorrect table name ''
+[09-Apr-2025 15:16:59 Europe/Berlin] SQLSTATE[42000]: Syntax error or access violation: 1103 Incorrect table name ''
+[09-Apr-2025 15:18:15 Europe/Berlin] SQLSTATE[42000]: Syntax error or access violation: 1103 Incorrect table name ''
+[09-Apr-2025 15:19:05 Europe/Berlin] SQLSTATE[42000]: Syntax error or access violation: 1103 Incorrect table name ''
+[09-Apr-2025 15:19:31 Europe/Berlin] SQLSTATE[42000]: Syntax error or access violation: 1103 Incorrect table name ''
+[09-Apr-2025 15:19:52 Europe/Berlin] SQLSTATE[42000]: Syntax error or access violation: 1103 Incorrect table name ''
+[09-Apr-2025 15:21:14 Europe/Berlin] SQLSTATE[42000]: Syntax error or access violation: 1103 Incorrect table name ''
+[09-Apr-2025 15:21:15 Europe/Berlin] SQLSTATE[42000]: Syntax error or access violation: 1103 Incorrect table name ''
+[09-Apr-2025 15:21:15 Europe/Berlin] SQLSTATE[42000]: Syntax error or access violation: 1103 Incorrect table name ''
+[09-Apr-2025 15:21:15 Europe/Berlin] SQLSTATE[42000]: Syntax error or access violation: 1103 Incorrect table name ''
+[09-Apr-2025 15:21:16 Europe/Berlin] SQLSTATE[42000]: Syntax error or access violation: 1103 Incorrect table name ''
+[09-Apr-2025 15:21:20 Europe/Berlin] SQLSTATE[42000]: Syntax error or access violation: 1103 Incorrect table name ''
+[09-Apr-2025 15:21:22 Europe/Berlin] SQLSTATE[42000]: Syntax error or access violation: 1103 Incorrect table name ''
+[09-Apr-2025 15:21:23 Europe/Berlin] SQLSTATE[42000]: Syntax error or access violation: 1103 Incorrect table name ''
+[09-Apr-2025 15:21:23 Europe/Berlin] SQLSTATE[42000]: Syntax error or access violation: 1103 Incorrect table name ''
+[09-Apr-2025 15:23:09 Europe/Berlin] SQLSTATE[42000]: Syntax error or access violation: 1103 Incorrect table name ''
+[09-Apr-2025 15:24:18 Europe/Berlin] found
+[09-Apr-2025 15:24:18 Europe/Berlin] SQLSTATE[42000]: Syntax error or access violation: 1103 Incorrect table name ''
