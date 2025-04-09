@@ -20,6 +20,7 @@ abstract class Model implements ModelInterface
         $model = new static();
         foreach ($data as $key => $value)
         {
+            $key = strtolower($key);
             if (property_exists($model, $key))
             {
                 $model->$key = $value;
@@ -81,7 +82,7 @@ abstract class Model implements ModelInterface
     }
     function delete(): bool
     {
-        $sql = "DELETE FROM `" . self::$table . "` WHERE id = :id";
+        $sql = "DELETE FROM `" . static::$table . "` WHERE id = :id";
         $queryResult = $this->db->execSql($sql, ['id' => $this->id]);
         return $queryResult;
     }

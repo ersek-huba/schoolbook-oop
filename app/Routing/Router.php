@@ -3,7 +3,8 @@
 namespace App\Routing;
 
 use App\Controllers\HomeController;
-use App\Controllers\SUbjectController;
+use App\Controllers\SubjectController;
+use App\Controllers\ClassController;
 use App\Views\Display;
 
 class Router
@@ -49,21 +50,68 @@ class Router
                 $subjectController = new SubjectController();
                 $subjectController->index();
                 return;
+            case '/subjects/create':
+                $subjectController = new SubjectController();
+                $subjectController->create();
+                return;
+            case '/classes':
+                $classController = new ClassController();
+                $classController->index();
+                return;
             default:
                 $this->notFound();
         }
     }
     private function handlePostRequests(string $requestUri)
     {
-        // TODO
+        switch ($requestUri)
+        {
+            case '/subjects':
+                if (isset($_POST['btn-save']))
+                {
+                    $subjectController = new SubjectController();
+                    $subjectController->save(['name' => $_POST['name']]);
+                }
+                return;
+            case '/subjects/create':
+                $subjectController = new SubjectController();
+                $subjectController->create();
+                return;
+            case '/subjects/edit':
+                $subjectController = new SubjectController();
+                $subjectController->edit($_POST['id']);
+                return;
+            default:
+                $this->notFound();
+        }
     }
     private function handlePatchRequests(string $requestUri)
     {
-        // TODO
+        switch ($requestUri)
+        {
+            case '/subjects':
+                $subjectController = new SubjectController();
+                $subjectController->update($_POST['id'], ['name' => $_POST['name']]);
+                return;
+            default:
+                $this->notFound();
+        }
     }
     private function handleDeleteRequests(string $requestUri)
     {
-        // TODO
+        echo "$requestUri";
+        switch ($requestUri)
+        {
+            case '/subjects':
+                if (isset($_POST['btn-del']))
+                {
+                    $subjectController = new SubjectController();
+                    $subjectController->delete($_POST['id']);
+                }
+                return;
+            default:
+                $this->notFound();
+        }
     }
     private function notFound(): void
     {

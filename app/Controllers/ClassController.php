@@ -1,85 +1,82 @@
 <?php
 namespace App\Controllers;
-use App\Models\Subject;
+use App\Models\ClassModel;
 use App\Views\Display;
 
-class SubjectController extends Controller {
+class ClassController extends Controller {
 
     public function __construct()
     {
-        $subject = new Subject();
-        parent::__construct($subject);
+        $class = new ClassModel();
+        parent::__construct($class);
     }
 
     public function index(): void
     {
-        $subjects = $this->model->all(['order_by' => ['name'], 'direction' => ['ASC']]);
-        $this->render('subjects/index', ['subjects' => $subjects]);
+        $classes = $this->model->all();
+        $this->render('classes/index', ['classes' => $classes]);
     }
 
     public function create(): void
     {
-        $this->render('subjects/create');
+        //$this->render('subjects/create');
     }
     public function edit(int $id): void
     {
-        $subject = $this->model->find($id);
+        /*$subject = $this->model->find($id);
         if (!$subject) {
             // Handle invalid ID gracefully
             $_SESSION['warning_message'] = "A tantárgy a megadott azonosítóval: $id nem található.";
             $this->redirect('/subjects');
         }
-        $this->render('subjects/edit', ['subject' => $subject]);
+        $this->render('subjects/edit', ['subject' => $subject]);*/
     }
 
     public function save(array $data): void
     {
-        if (empty($data['name'])) {
+        /*if (empty($data['name'])) {
             $_SESSION['warning_message'] = "A tantárgy neve kötelező mező.";
             $this->redirect('/subjects/create'); // Redirect if input is invalid
         }
         // Use the existing model instance
-        assert($this->model instanceof Subject);
         $this->model->name = $data['name'];
         $this->model->create();
-        $this->redirect('/subjects');
+        $this->redirect('/subjects');*/
     }
 
     public function update(int $id, array $data): void
     {
-        $subject = $this->model->find($id);
+        /*$subject = $this->model->find($id);
         if (!$subject || empty($data['name'])) {
             // Handle invalid ID or data
             $this->redirect('/subjects');
         }
-        assert($subject instanceof Subject);
         $subject->name = $data['name'];
         $subject->update();
-        $this->redirect('/subjects');
+        $this->redirect('/subjects');*/
     }
 
     function show(int $id): void
     {
-        $subject = $this->model->find($id);
+        /*$subject = $this->model->find($id);
         if (!$subject) {
             $_SESSION['warning_message'] = "A tantárgy a megadott azonosítóval: $id nem található.";
             $this->redirect('/subjects'); // Handle invalid ID
         }
-        $this->render('subjects/show', ['subject' => $subject]);
+        $this->render('subjects/show', ['subject' => $subject]);*/
     }
 
     function delete(int $id): void
     {
-        $subject = $this->model->find($id);
+        /*$subject = $this->model->find($id);
         if ($subject) {
-            assert($subject instanceof Subject);
             $result = $subject->delete();
             if ($result) {
                 $_SESSION['success_message'] = 'Sikeresen törölve';
             }
         }
 
-        $this->redirect('/subjects'); // Redirect regardless of success
+        $this->redirect('/subjects'); // Redirect regardless of success*/
     }
 
 }
